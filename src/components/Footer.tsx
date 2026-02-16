@@ -3,9 +3,22 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
+import { getServiceBySlug } from '../data/services';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const { language } = useLanguage();
+    const t = translations[language].footer;
+
+    // Fetch specific services for the footer links to ensure localized titles
+    const serviceSlugs = ['yalo-pinakes', 'syromenes-fysounes', 'gyalina-kagkela', 'energeiaka-tzamia']; // slugs might vary by language if we localized slugs, but typically slugs are constant or mapped. 
+    // In src/data/services.ts, slugs seem to be constant 'yalo-pinakes' etc across languages (checked el and en).
+    // Wait, let's check services.ts again.
+    // el: slug: 'yalo-pinakes'
+    // en: slug: 'yalo-pinakes'
+    // So slugs are constant.
 
     return (
         <footer className="bg-gradient-to-t from-soft-skin to-white pt-32 pb-12 overflow-hidden border-t border-black/5 relative text-black">
@@ -22,30 +35,33 @@ const Footer = () => {
                             </span>
                         </Link>
                         <p className="text-black/60 text-lg md:text-xl font-medium max-w-md leading-relaxed">
-                            Αρχιτεκτονικά συστήματα γυαλιού για τους οραματιστές του αύριο. Σχεδιασμός και εγκατάσταση σε όλα τα Δωδεκάνησα.
+                            {t.description}
                         </p>
                     </div>
 
                     {/* Links Grid */}
                     <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
-                        <FooterColumn title="Εξερευνηση">
-                            <FooterLink href="/portfolio">Επιλεγμένα Έργα</FooterLink>
-                            <FooterLink href="/services">Υπηρεσίες</FooterLink>
-                            <FooterLink href="/about">Η Φιλοσοφία μας</FooterLink>
+                        <FooterColumn title={t.explore}>
+                            <FooterLink href="/portfolio">{t.links.portfolio}</FooterLink>
+                            <FooterLink href="/services">{t.links.services}</FooterLink>
+                            <FooterLink href="/about">{t.links.about}</FooterLink>
                         </FooterColumn>
 
-                        <FooterColumn title="Υπηρεσιες">
-                            <FooterLink href="/service/yalo-pinakes">Γυάλινοι Πίνακες</FooterLink>
-                            <FooterLink href="/service/syromenes-fysounes">Συρόμενα Συστήματα</FooterLink>
-                            <FooterLink href="/service/gyalina-kagkela">Κάγκελα</FooterLink>
-                            <FooterLink href="/service/energeiakoi-yalo-pinakes">Ενεργειακά</FooterLink>
+                        <FooterColumn title={t.services}>
+                            {serviceSlugs.map(slug => {
+                                const service = getServiceBySlug(slug, language);
+                                if (!service) return null;
+                                return (
+                                    <FooterLink key={slug} href={`/service/${slug}`}>{service.title}</FooterLink>
+                                );
+                            })}
                         </FooterColumn>
 
-                        <FooterColumn title="Επικοινωνια">
-                            <FooterLink href="/contact">Ζητήστε Προσφορά</FooterLink>
+                        <FooterColumn title={t.contact}>
+                            <FooterLink href="/contact">{t.links.get_quote}</FooterLink>
                             <FooterLink href="mailto:info@dodekanisaglass.gr">info@dodekanisaglass.gr</FooterLink>
                             <span className="text-black/40 text-sm mt-4 block font-mono">+30 22410 00000</span>
-                            <span className="text-black/40 text-sm block font-sans">Ρόδος, Ελλάδα</span>
+                            <span className="text-black/40 text-sm block font-sans">{t.address}</span>
                         </FooterColumn>
                     </div>
                 </div>
@@ -53,13 +69,13 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="flex flex-col md:flex-row justify-between items-end border-t border-black/5 pt-12 gap-6">
                     <div className="flex gap-8">
-                        <span className="text-black/30 text-xs font-bold uppercase tracking-widest">© {currentYear} DG Systems</span>
-                        <Link href="/privacy" className="text-black/30 text-xs font-bold uppercase tracking-widest hover:text-black transition-colors">Privacy</Link>
-                        <Link href="/terms" className="text-black/30 text-xs font-bold uppercase tracking-widest hover:text-black transition-colors">Terms</Link>
+                        <span className="text-black/30 text-xs font-bold uppercase tracking-widest">© {currentYear} {t.rights}</span>
+                        <Link href="/privacy" className="text-black/30 text-xs font-bold uppercase tracking-widest hover:text-black transition-colors">{t.privacy}</Link>
+                        <Link href="/terms" className="text-black/30 text-xs font-bold uppercase tracking-widest hover:text-black transition-colors">{t.terms}</Link>
                     </div>
 
                     <a href="https://distarter.com" target="_blank" rel="noopener noreferrer" className="text-black/20 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-black transition-colors duration-300">
-                        Designed & Maintained by Distarter
+                        {t.designed_by}
                     </a>
                 </div>
 

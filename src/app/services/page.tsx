@@ -35,7 +35,7 @@ export default function ServicesPage() {
             {/* Header */}
             <div className="max-w-[1400px] mx-auto px-6 mb-20 text-center">
                 <span className="text-black/40 text-[10px] font-bold uppercase tracking-[0.5em] mb-6 block animate-slide-up">
-                    Our Expertise
+                    {t.label}
                 </span>
                 <h1 className="text-5xl md:text-7xl font-heading font-black tracking-tighter text-black mb-8 animate-slide-up" style={{ animationDelay: '100ms' }}>
                     {t.title} <span className="text-black/30 italic font-serif">{t.subtitle}</span>

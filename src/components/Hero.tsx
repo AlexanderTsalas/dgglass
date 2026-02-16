@@ -2,8 +2,12 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
   const titleRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -43,26 +47,26 @@ const Hero = () => {
         {/* Text Content */}
         <div className="max-w-4xl order-2 lg:order-1">
           <span className="text-black/40 font-sans text-xs font-bold uppercase tracking-[0.4em] mb-8 block">
-            Premium Glass Constructions
+            {t.label}
           </span>
           <h1
             ref={titleRef}
             className="text-7xl md:text-9xl font-bold tracking-tighter text-black leading-[0.9] mb-12 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
           >
-            Η Τέχνη του <br />
-            <span className="text-black/20 italic font-serif">Διάφανου.</span>
+            {t.title_line1} <br />
+            <span className="text-black/20 italic font-serif">{t.title_line2}</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-black/60 max-w-xl leading-relaxed font-light mb-16">
-            Σχεδιάζουμε και κατασκευάζουμε αρχιτεκτονικά συστήματα γυαλιού που επαναπροσδιορίζουν τα όρια του χώρου σας.
+            {t.subtitle}
           </p>
 
           <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
             <button className="btn-minimal group bg-black text-white border-transparent hover:bg-white hover:text-black hover:border-black shadow-lg hover:shadow-xl transition-all duration-500">
-              <span className="relative z-10">Δείτε τα Έργα μας</span>
+              <span className="relative z-10">{t.cta_portfolio}</span>
             </button>
             <div className="h-[1px] w-20 bg-black/10 hidden md:block" />
-            <span className="text-xs font-bold uppercase tracking-widest text-black/40">Since 1998</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-black/40">Since 1993</span>
           </div>
         </div>
 
@@ -84,7 +88,7 @@ const Hero = () => {
           {/* Floating Badge */}
           <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-105">
             <span className="text-4xl font-bold block">100%</span>
-            <span className="text-[10px] uppercase tracking-widest text-black/40 font-bold">Premium Quality</span>
+            <span className="text-[10px] uppercase tracking-widest text-black/40 font-bold">{t.badge_quality}</span>
           </div>
         </div>
 
@@ -93,7 +97,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-12 left-6 md:left-12 flex items-center gap-4 text-black/30 animate-bounce">
         <ArrowDown size={20} />
-        <span className="text-[10px] font-bold uppercase tracking-widest">Scroll</span>
+        <span className="text-[10px] font-bold uppercase tracking-widest">{t.scroll}</span>
       </div>
     </section>
   );

@@ -3,7 +3,23 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
+
 const ServiceSearch = ({ categories, activCategory, onCategoryChange, searchTerm, onSearchChange }) => {
+    const { language } = useLanguage();
+    const t = translations[language].services;
+    const tCats = translations[language].categories;
+
+    // Helper to translate category if it matches a key, otherwise leave as is
+    const getDisplayName = (cat) => {
+        // Services might have different category names. 
+        // If 'categories' prop contains English descriptors or IDs, we try to translate.
+        // Assuming categories are like 'Residential', 'Commercial' etc.
+        if (cat === 'ALL') return t.all;
+        return tCats[cat.toLowerCase()] || cat;
+    };
+
     return (
         <div className="w-full max-w-4xl mx-auto mb-16 space-y-8">
             {/* Search Bar */}
@@ -15,7 +31,7 @@ const ServiceSearch = ({ categories, activCategory, onCategoryChange, searchTerm
                     type="text"
                     value={searchTerm}
                     onChange={(e) => onSearchChange(e.target.value)}
-                    placeholder="Αναζήτηση υπηρεσιών..."
+                    placeholder={t.search_placeholder}
                     className="block w-full pl-16 pr-6 py-4 bg-white border border-black/5 rounded-full text-black placeholder-black/30 focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black/20 shadow-sm transition-all duration-300 hover:shadow-md"
                 />
             </div>
@@ -25,22 +41,22 @@ const ServiceSearch = ({ categories, activCategory, onCategoryChange, searchTerm
                 <button
                     onClick={() => onCategoryChange('ALL')}
                     className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${activCategory === 'ALL'
-                            ? 'bg-black text-white border-black'
-                            : 'bg-white text-black/60 border-black/5 hover:border-black/20 hover:text-black'
+                        ? 'bg-black text-white border-black'
+                        : 'bg-white text-black/60 border-black/5 hover:border-black/20 hover:text-black'
                         }`}
                 >
-                    ΟΛΑ
+                    {t.all}
                 </button>
                 {categories.map((cat) => (
                     <button
                         key={cat}
                         onClick={() => onCategoryChange(cat)}
                         className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${activCategory === cat
-                                ? 'bg-black text-white border-black'
-                                : 'bg-white text-black/60 border-black/5 hover:border-black/20 hover:text-black'
+                            ? 'bg-black text-white border-black'
+                            : 'bg-white text-black/60 border-black/5 hover:border-black/20 hover:text-black'
                             }`}
                     >
-                        {cat}
+                        {getDisplayName(cat)}
                     </button>
                 ))}
             </div>

@@ -27,18 +27,22 @@ export default function PortfolioPage() {
     return (
         <div className="pt-32 bg-soft-white min-h-screen text-black">
             {/* Header Section */}
-            <section className="bg-white py-24 px-6 border-b border-black/5">
+            <section className="bg-white py-16 px-6 border-b border-black/5">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="max-w-4xl">
-                        <span className="text-black/40 text-[10px] font-bold uppercase tracking-[0.5em] mb-6 block animate-slide-up">
-                            {t.label}
-                        </span>
-                        <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-black mb-8 animate-slide-up" style={{ animationDelay: '100ms' }}>
-                            {t.title} <br /> <span className="text-black/30 font-serif italic">{t.subtitle}</span>
-                        </h1>
-                        <p className="text-black/60 text-sm leading-relaxed uppercase tracking-widest font-bold max-w-xl animate-slide-up" style={{ animationDelay: '200ms' }}>
-                            {t.description}
-                        </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+                        <div className="lg:col-span-7 text-left">
+                            <span className="text-black/40 text-[10px] font-bold uppercase tracking-[0.5em] mb-4 block animate-slide-up">
+                                {t.label}
+                            </span>
+                            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-black animate-slide-up" style={{ animationDelay: '100ms' }}>
+                                {t.title} <br /> <span className="text-black/30 font-serif italic">{t.subtitle}</span>
+                            </h1>
+                        </div>
+                        <div className="lg:col-span-5 text-left lg:text-right pb-2 animate-slide-up" style={{ animationDelay: '200ms' }}>
+                            <p className="text-black/60 text-sm leading-relaxed uppercase tracking-widest font-bold max-w-md ml-auto">
+                                {t.description}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

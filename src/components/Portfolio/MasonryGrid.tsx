@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
 const PortfolioItem = ({ item }) => (
     <div className="relative group mb-8 break-inside-avoid">
-        <div className="relative overflow-hidden rounded-[20px] bg-soft-white">
+        <Link href={`/portfolio/${item.slug || '#'}`} className="block relative overflow-hidden rounded-[20px] bg-soft-white cursor-pointer">
             <img
                 src={item.url}
                 alt={item.location}
@@ -12,19 +13,26 @@ const PortfolioItem = ({ item }) => (
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Content */}
-            <div className="absolute inset-x-0 bottom-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                <span className="text-white/80 text-[9px] font-bold uppercase tracking-[0.3em] mb-2 block">
-                    {item.type}
-                </span>
-                <h3 className="text-white text-xl font-heading font-bold tracking-tight">
-                    {item.location}
-                </h3>
-                <p className="text-white/60 text-[10px] uppercase font-mono mt-2">{item.year}</p>
+            <div className="absolute inset-0 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <span className="text-white/80 text-[9px] font-bold uppercase tracking-[0.3em] mb-2 block">
+                        {item.type}
+                    </span>
+                    <h3 className="text-white text-xl font-heading font-bold tracking-tight mb-2">
+                        {item.location}
+                    </h3>
+                    <div className="flex items-center justify-between border-t border-white/20 pt-4 mt-2">
+                        <p className="text-white/60 text-[10px] uppercase font-mono">{item.year}</p>
+                        <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm">
+                            <ArrowUpRight className="text-white w-4 h-4" />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Link>
     </div>
 );
 

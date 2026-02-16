@@ -2,7 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
+
 const EnhancedServiceCard = ({ service }) => {
+    const { language } = useLanguage();
+    const t = translations[language].services;
+    const tCats = translations[language].categories;
+
     return (
         <div className="group bg-white rounded-[32px] overflow-hidden border border-black/5 hover:border-soft-pink hover:shadow-xl transition-all duration-500 flex flex-col h-full">
             {/* Image Header */}
@@ -14,7 +21,7 @@ const EnhancedServiceCard = ({ service }) => {
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                     <span className="text-[10px] font-bold uppercase tracking-widest text-black/60">
-                        {service.category}
+                        {tCats[service.category?.toLowerCase()] || service.category}
                     </span>
                 </div>
             </div>
@@ -45,7 +52,7 @@ const EnhancedServiceCard = ({ service }) => {
                     href={`/service/${service.slug}`}
                     className="mt-auto flex items-center justify-between w-full py-4 px-6 rounded-2xl bg-soft-white group-hover:bg-black group-hover:text-white transition-all duration-300"
                 >
-                    <span className="text-xs font-bold uppercase tracking-widest">Περισσότερα</span>
+                    <span className="text-xs font-bold uppercase tracking-widest">{t.read_more}</span>
                     <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Link>
             </div>

@@ -46,7 +46,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Ενεργειακά Τζάμια',
       slug: 'energeiaka-tzamia',
       description: 'Σύγχρονη τεχνολογία low-e για μέγιστη εξοικονόμηση ενέργειας και θερμική άνεση χειμώνα-καλοκαίρι.',
-      image: 'https://images.unsplash.com/photo-1556912173-3db996e160d7?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
       delay: 200,
       category: 'Energy',
       features: ['Low-E επίστρωση', 'Μείωση δαπανών', 'Θερμική άνεση', 'Περιορισμός UV']
@@ -66,7 +66,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Γυάλινες Πόρτες',
       slug: 'gyalines-portes',
       description: 'Πόρτες ανοιγόμενες και συρόμενες με σύγχρονους μηχανισμούς και minimal αισθητική.',
-      image: 'https://images.unsplash.com/photo-1595515106967-1b035dd0e6f2?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
       delay: 300,
       category: 'Interior',
       features: ['Αθόρυβη λειτουργία', 'Ασφάλεια', 'Custom σχέδια', 'Ανθεκτικοί μεντεσέδες']
@@ -76,7 +76,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Καμπίνες Ντουζ',
       slug: 'kampines-ntouz',
       description: 'Custom κατασκευές για το μπάνιο σας με κρύσταλλα ασφαλείας και υλικά υψηλής αντοχής.',
-      image: 'https://images.unsplash.com/photo-1584622050111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=1000',
       delay: 350,
       category: 'Interior',
       features: ['Ασφαλείας Securit', 'Εύκολος καθαρισμός', 'Ανοξείδωτα εξαρτήματα', 'Στεγανότητα']
@@ -106,7 +106,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Security Glass',
       slug: 'security-glass',
       description: 'Αλεξίσφαιρα και αντιβανδαλιστικά τζάμια για τράπεζες, κοσμηματοπωλεία και οικίες υψηλής ασφαλείας.',
-      image: 'https://images.unsplash.com/photo-1590486803247-497793d5fba2?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
       delay: 500,
       category: 'Safety',
       features: ['Πιστοποίηση Bullet-proof', 'Πολυστρωματικά', 'Χωρίς παραμόρφωση', 'Αντοχή σε κρούση']
@@ -126,7 +126,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Έξυπνο Γυαλί (PDLC)',
       slug: 'smart-glass',
       description: 'Γυαλί που αλλάζει από διάφανο σε αδιαφανές με το πάτημα ενός κουμπιού. Ιδιωτικότητα on-demand.',
-      image: 'https://images.unsplash.com/photo-1558442074-3c19857bc1d7?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1497215842964-2227430d3d1f?auto=format&fit=crop&q=80&w=1000',
       delay: 600,
       category: 'Systems',
       features: ['Instant Privacy', 'Ενεργειακό', 'Λειτουργεί ως οθόνη', 'Ηχομόνωση']
@@ -168,7 +168,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Energy Glass',
       slug: 'energeiaka-tzamia',
       description: 'Modern low-e technology for maximum energy savings and thermal comfort winter-summer.',
-      image: 'https://images.unsplash.com/photo-1556912173-3db996e160d7?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
       delay: 200,
       category: 'Energy',
       features: ['Low-E Coating', 'Cost Reduction', 'Thermal Comfort', 'UV Limitation']
@@ -188,7 +188,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Glass Doors',
       slug: 'gyalines-portes',
       description: 'Opening and sliding doors with modern mechanisms and minimal aesthetics.',
-      image: 'https://images.unsplash.com/photo-1595515106967-1b035dd0e6f2?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
       delay: 300,
       category: 'Interior',
       features: ['Silent Operation', 'Safety', 'Custom Designs', 'Durable Hinges']
@@ -198,7 +198,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Shower Cabins',
       slug: 'kampines-ntouz',
       description: 'Custom constructions for your bathroom with safety crystals and high-durability materials.',
-      image: 'https://images.unsplash.com/photo-1584622050111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=1000',
       delay: 350,
       category: 'Interior',
       features: ['Securit Safety', 'Easy Clean', 'Stainless Parts', 'Waterproof']
@@ -228,7 +228,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Security Glass',
       slug: 'security-glass',
       description: 'Bulletproof and vandal-proof glass for banks, jewelry stores, and high-security homes.',
-      image: 'https://images.unsplash.com/photo-1590486803247-497793d5fba2?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
       delay: 500,
       category: 'Safety',
       features: ['Bullet-proof Cert', 'Multi-laminate', 'No Distortion', 'Impact Resistance']
@@ -248,7 +248,7 @@ const servicesData: Record<string, Service[]> = {
       title: 'Smart Glass (PDLC)',
       slug: 'smart-glass',
       description: 'Glass that changes from transparent to opaque with the push of a button. Privacy on-demand.',
-      image: 'https://images.unsplash.com/photo-1558442074-3c19857bc1d7?auto=format&fit=crop&q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1497215842964-2227430d3d1f?auto=format&fit=crop&q=80&w=1000',
       delay: 600,
       category: 'Systems',
       features: ['Instant Privacy', 'Energy Efficient', 'Projectable', 'Soundproofing']

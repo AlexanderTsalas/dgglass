@@ -6,12 +6,9 @@ import ContactForm from './Inquiry/ContactForm';
 
 const InquiryForm = () => {
   return (
-    <section id="contact" className="section-padding bg-white border-t border-black/5">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
-        <InfoColumn />
-        <ContactForm />
-      </div>
-    </section>
+    <div className="w-full h-full flex flex-col justify-center">
+      <ContactForm />
+    </div>
   );
 };
 

@@ -1,47 +1,28 @@
 import React from 'react';
 import { getServicesData } from '../../../data/services';
-import ServiceDetailHeader from '../../../components/ServiceDetail/Header';
-import ServiceDetailContent from '../../../components/ServiceDetail/Content';
-import ServiceDetailSidebar from '../../../components/ServiceDetail/Sidebar';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import ServiceClient from './ServiceClient';
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const servicesData = getServicesData();
+    const servicesData = getServicesData('el'); // Default to Greek metadata
     const service = servicesData.find(s => s.slug === slug);
 
     if (!service) {
         return {
-            title: 'Υπηρεσία δεν βρέθηκε | Δωδεκάνησα Glass',
+            title: 'Service Not Found | Δωδεκάνησα Glass',
         };
     }
 
     return {
         title: `${service.title} | Δωδεκάνησα Glass`,
-        description: service.description || `Λεπτομέρειες για την υπηρεσία ${service.title}`,
+        description: service.description || `High quality ${service.title} solutions in Rhodes.`,
     };
 }
 
-export default async function ServiceDetailPage({ params }) {
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const servicesData = getServicesData();
-    const service = servicesData.find(s => s.slug === slug);
-
-    if (!service) {
-        notFound();
-    }
-
-    return (
-        <main>
-            <ServiceDetailHeader service={service} />
-
-            <section className="section-padding bg-pure-white">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
-                    <ServiceDetailContent serviceTitle={service.title} />
-                    <ServiceDetailSidebar />
-                </div>
-            </section>
-        </main>
-    );
+    // We don't fetch data here because we want it to be reactive to language on the client.
+    // However, if we wanted SEO for the initial load language, we could fetch here.
+    // For now, we delegate rendering to the client component.
+    return <ServiceClient slug={slug} />;
 }

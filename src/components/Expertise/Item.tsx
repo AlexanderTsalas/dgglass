@@ -29,8 +29,6 @@ const ExpertiseItem = ({ iconSlug, title, description, delay, slug, image }: Exp
             alt={title}
             className="w-full h-full object-cover opacity-100 transition-transform duration-700 ease-soft group-hover:scale-105"
           />
-          {/* Subtle Gradient for Text Readability Only */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-80" />
         </div>
       )}
 
@@ -64,7 +62,7 @@ const ExpertiseItem = ({ iconSlug, title, description, delay, slug, image }: Exp
           <h3 className="text-2xl md:text-3xl font-heading font-medium text-black mb-4 leading-none tracking-tight">
             {title}
           </h3>
-          <p className="text-sm text-black/80 font-medium leading-relaxed line-clamp-2 font-sans">
+          <p className="text-sm text-white font-medium leading-relaxed line-clamp-2 font-sans drop-shadow-md">
             {description}
           </p>
         </div>

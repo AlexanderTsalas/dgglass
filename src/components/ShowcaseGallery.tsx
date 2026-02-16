@@ -21,18 +21,23 @@ const PortfolioItem = ({ url, location, type, index }) => (
   </div>
 );
 
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../data/translations';
+
 const ShowcaseGallery = () => {
-  const items = getPortfolioData();
+  const { language } = useLanguage();
+  const items = getPortfolioData(language);
+  const t = translations[language].home.showcase;
 
   return (
     <section id="portfolio" className="section-padding bg-dode-navy">
       <div className="max-w-[1800px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20">
           <div>
-            <span className="text-dode-accent text-[10px] font-bold uppercase tracking-[0.5em] mb-4 block">Portfolio</span>
-            <h2 className="text-white">Πρόσφατα <span className="text-dode-accent">Έργα.</span></h2>
+            <span className="text-dode-accent text-[10px] font-bold uppercase tracking-[0.5em] mb-4 block">{t.label}</span>
+            <h2 className="text-white">{t.title} <span className="text-dode-accent">{t.subtitle}</span></h2>
           </div>
-          <a href="#" className="hidden md:block text-[11px] font-bold uppercase tracking-[0.3em] border-b-2 border-dode-navy pb-1">ΔΕΙΤΕ ΟΛΑ ΤΑ ΕΡΓΑ</a>
+          <a href="/portfolio" className="hidden md:block text-[11px] font-bold uppercase tracking-[0.3em] border-b-2 border-dode-navy pb-1">{t.view_all}</a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">

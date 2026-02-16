@@ -26,8 +26,12 @@ const AdvantageCard = ({ title, description, icon }) => {
   );
 };
 
+import { useLanguage } from '../context/LanguageContext';
+
 const AdvantagePoints = () => {
-  const data = getAdvantageData();
+  const { language } = useLanguage();
+  const data = getAdvantageData(language);
+
   return (
     <section className="section-padding bg-dode-navy relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative z-10">
