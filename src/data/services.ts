@@ -9,7 +9,7 @@ export interface Service {
   features: string[];
 }
 
-const servicesData: Record<string, Service[]> = {
+export const servicesData: Record<string, Service[]> = {
   el: [
     {
       iconSlug: 'layers',
@@ -259,11 +259,121 @@ const servicesData: Record<string, Service[]> = {
       iconSlug: 'layers',
       title: 'Стеклопакеты',
       slug: 'yalo-pinakes',
-      description: 'Высококачественное стекло для любых целей.',
+      description: 'Высококачественное стекло для любых бытовых и профессиональных целей. Энергоэффективное, безопасное и звукоизолирующее.',
       image: 'https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?auto=format&fit=crop&q=80&w=1000',
       delay: 50,
       category: 'Structural',
-      features: ['Высокая прочность', 'Резка по размеру', 'Защита от УФ', 'Звукоизоляция']
+      features: ['Высокая прочность', 'Резка по размеру', 'Защита от УФ', 'Звукоизоляция', 'Энергоэффективность']
+    },
+    {
+      iconSlug: 'maximize',
+      title: 'Раздвижные Системы',
+      slug: 'syromenes-fysounes',
+      description: 'Минималистичные раздвижные системы и двери-гармошки для максимальной прозрачности и открытия пространства.',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
+      delay: 100,
+      category: 'Systems',
+      features: ['Тонкие рамы', 'Плавное скольжение', 'Терморазрыв', 'Бесшовный вид', 'Макс. открытие']
+    },
+    {
+      iconSlug: 'shield',
+      title: 'Стеклянные Перила',
+      slug: 'gyalina-kagkela',
+      description: 'Кристальные балюстрады, обеспечивающие безопасность без преграждения вида. Идеально для балконов и лестниц.',
+      image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=1000',
+      delay: 150,
+      category: 'Structural',
+      features: ['Безрамные', 'Триплекс безопасности', 'Устойчивость к коррозии', 'Индивидуальные крепления']
+    },
+    {
+      iconSlug: 'zap',
+      title: 'Энергосберегающее Стекло',
+      slug: 'energeiaka-tzamia',
+      description: 'Современная технология low-e для максимальной экономии энергии и теплового комфорта зимой и летом.',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
+      delay: 200,
+      category: 'Energy',
+      features: ['Low-E покрытие', 'Снижение затрат', 'Тепловой комфорт', 'Ограничение УФ']
+    },
+    {
+      iconSlug: 'layout',
+      title: 'Стеклянные Перегородки',
+      slug: 'gyalina-xwrismata',
+      description: 'Интерьерные перегородки для офисов и домов. Сохраняйте яркость с полной звукоизоляцией.',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
+      delay: 250,
+      category: 'Interior',
+      features: ['Звукоизоляция', 'Минималистичный дизайн', 'Различные оттенки', 'Легкая установка']
+    },
+    {
+      iconSlug: 'doorOpen',
+      title: 'Стеклянные Двери',
+      slug: 'gyalines-portes',
+      description: 'Распашные и раздвижные двери с современными механизмами и минималистичной эстетикой.',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
+      delay: 300,
+      category: 'Interior',
+      features: ['Тихая работа', 'Безопасность', 'Индивидуальный дизайн', 'Прочные петли']
+    },
+    {
+      iconSlug: 'shower',
+      title: 'Душевые Кабины',
+      slug: 'kampines-ntouz',
+      description: 'Индивидуальные конструкции для вашей ванной комнаты из безопасного стекла и высокопрочных материалов.',
+      image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=1000',
+      delay: 350,
+      category: 'Interior',
+      features: ['Безопасность Securit', 'Легкая чистка', 'Нержавеющие детали', 'Водонепроницаемость']
+    },
+    {
+      iconSlug: 'store',
+      title: 'Витрины Магазинов',
+      slug: 'vitrines',
+      description: 'Профессиональные фасады магазинов для максимальной видимости и безопасности.',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000',
+      delay: 400,
+      category: 'Commercial',
+      features: ['Высокая прозрачность', 'Антивандальные', 'Большие размеры', 'УФ-фильтры']
+    },
+    {
+      iconSlug: 'sun',
+      title: 'Специальные Конструкции',
+      slug: 'eidikes-kataskeves',
+      description: 'Навесы, лестницы, полы и любые другие стеклянные конструкции, которые требуются вашему пространству.',
+      image: 'https://images.unsplash.com/photo-1516054575922-f0b8eeadec1a?auto=format&fit=crop&q=80&w=1000',
+      delay: 450,
+      category: 'Special',
+      features: ['Прикладное исследование', 'Структурная прочность', 'Уникальный дизайн', 'Сертифицированные материалы']
+    },
+    {
+      iconSlug: 'lock',
+      title: 'Безопасное Стекло',
+      slug: 'security-glass',
+      description: 'Пуленепробиваемое и антивандальное стекло для банков, ювелирных магазинов и домов высокой безопасности.',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
+      delay: 500,
+      category: 'Safety',
+      features: ['Сертификат пулестойкости', 'Многослойное', 'Без искажений', 'Ударопрочность']
+    },
+    {
+      iconSlug: 'copy',
+      title: 'Зеркала',
+      slug: 'kathreptes',
+      description: 'Высококачественные зеркала для любого использования, с опциональной LED подсветкой и нестандартными формами.',
+      image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=1000',
+      delay: 550,
+      category: 'Interior',
+      features: ['Чистота отражения', 'Влагостойкость', 'LED подсветка', 'ЧПУ резка']
+    },
+    {
+      iconSlug: 'eye',
+      title: 'Умное Стекло (PDLC)',
+      slug: 'smart-glass',
+      description: 'Стекло, меняющееся с прозрачного на матовое нажатием кнопки. Приватность по требованию.',
+      image: 'https://images.unsplash.com/photo-1497215842964-2227430d3d1f?auto=format&fit=crop&q=80&w=1000',
+      delay: 600,
+      category: 'Systems',
+      features: ['Мгновенная приватность', 'Энергоэффективность', 'Возможность проекции', 'Звукоизоляция']
     }
   ],
   zh: [
@@ -271,11 +381,121 @@ const servicesData: Record<string, Service[]> = {
       iconSlug: 'layers',
       title: '玻璃面板',
       slug: 'yalo-pinakes',
-      description: '适合各种家庭和专业用途的顶级玻璃面板。',
+      description: '适合各种家庭和专业用途的顶级玻璃面板。节能、安全、隔音。',
       image: 'https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?auto=format&fit=crop&q=80&w=1000',
       delay: 50,
       category: 'Structural',
-      features: ['高耐用性', '定制切割', '紫外线防护', '隔音']
+      features: ['高耐用性', '定制切割', '紫外线防护', '隔音', '节能']
+    },
+    {
+      iconSlug: 'maximize',
+      title: '推拉与折叠系统',
+      slug: 'syromenes-fysounes',
+      description: '极简推拉门系统和折叠门，为您的空间提供最大的视野和开放性。',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
+      delay: 100,
+      category: 'Systems',
+      features: ['超窄边框', '顺滑滑动', '隔热断桥', '无缝视野', '最大开启']
+    },
+    {
+      iconSlug: 'shield',
+      title: '玻璃栏杆',
+      slug: 'gyalina-kagkela',
+      description: '水晶般的栏杆，提供安全性而不遮挡视线。非常适合阳台和楼梯。',
+      image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=1000',
+      delay: 150,
+      category: 'Structural',
+      features: ['无框设计', '安全夹胶', '耐腐蚀', '定制安装']
+    },
+    {
+      iconSlug: 'zap',
+      title: '节能玻璃',
+      slug: 'energeiaka-tzamia',
+      description: '现代 Low-E 技术，实现冬夏两季最大的能源节约和热舒适度。',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
+      delay: 200,
+      category: 'Energy',
+      features: ['Low-E 镀膜', '降低成本', '热舒适', '紫外线限制']
+    },
+    {
+      iconSlug: 'layout',
+      title: '玻璃隔断',
+      slug: 'gyalina-xwrismata',
+      description: '用于办公室和家庭的内部隔断。保持明亮的同时实现绝对隔音。',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
+      delay: 250,
+      category: 'Interior',
+      features: ['隔音', '极简设计', '多种色调', '安装简便']
+    },
+    {
+      iconSlug: 'doorOpen',
+      title: '玻璃门',
+      slug: 'gyalines-portes',
+      description: '具有现代机制和极简美学的平开门和推拉门。',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
+      delay: 300,
+      category: 'Interior',
+      features: ['静音操作', '安全', '定制设计', '耐用铰链']
+    },
+    {
+      iconSlug: 'shower',
+      title: '淋浴房',
+      slug: 'kampines-ntouz',
+      description: '为您的浴室定制的结构，采用安全水晶和高耐用性材料。',
+      image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=1000',
+      delay: 350,
+      category: 'Interior',
+      features: ['Securit 安全', '易清洁', '不锈钢配件', '防水']
+    },
+    {
+      iconSlug: 'store',
+      title: '店铺门面',
+      slug: 'vitrines',
+      description: '专业的店铺外墙，实现最大的可见度和安全性。',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000',
+      delay: 400,
+      category: 'Commercial',
+      features: ['高清晰度', '防破坏', '大尺寸', '紫外线过滤器']
+    },
+    {
+      iconSlug: 'sun',
+      title: '特殊结构',
+      slug: 'eidikes-kataskeves',
+      description: '雨棚、楼梯、地板以及您空间所需的任何其他玻璃结构。',
+      image: 'https://images.unsplash.com/photo-1516054575922-f0b8eeadec1a?auto=format&fit=crop&q=80&w=1000',
+      delay: 450,
+      category: 'Special',
+      features: ['应用研究', '结构充分性', '独特设计', '认证材料']
+    },
+    {
+      iconSlug: 'lock',
+      title: '安全玻璃',
+      slug: 'security-glass',
+      description: '用于银行、珠宝店和高安全性住宅的防弹和防破坏玻璃。',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
+      delay: 500,
+      category: 'Safety',
+      features: ['防弹认证', '多层层压', '无失真', '抗冲击']
+    },
+    {
+      iconSlug: 'copy',
+      title: '镜子',
+      slug: 'kathreptes',
+      description: '适合各种用途的高品质镜子，可选配 LED 照明和定制形状。',
+      image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=1000',
+      delay: 550,
+      category: 'Interior',
+      features: ['清晰成像', '防潮', 'LED 背光', 'CNC 切割']
+    },
+    {
+      iconSlug: 'eye',
+      title: '智能玻璃 (PDLC)',
+      slug: 'smart-glass',
+      description: '只需按一下按钮，玻璃即可从透明变为不透明。按需隐私。',
+      image: 'https://images.unsplash.com/photo-1497215842964-2227430d3d1f?auto=format&fit=crop&q=80&w=1000',
+      delay: 600,
+      category: 'Systems',
+      features: ['即时隐私', '节能', '可投影', '隔音']
     }
   ],
   ar: [

@@ -7,18 +7,23 @@ import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { getServiceBySlug } from '../data/services';
 
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const { language } = useLanguage();
     const t = translations[language].footer;
 
     // Fetch specific services for the footer links to ensure localized titles
-    const serviceSlugs = ['yalo-pinakes', 'syromenes-fysounes', 'gyalina-kagkela', 'energeiaka-tzamia']; // slugs might vary by language if we localized slugs, but typically slugs are constant or mapped. 
-    // In src/data/services.ts, slugs seem to be constant 'yalo-pinakes' etc across languages (checked el and en).
-    // Wait, let's check services.ts again.
-    // el: slug: 'yalo-pinakes'
-    // en: slug: 'yalo-pinakes'
-    // So slugs are constant.
+    const serviceSlugs = ['yalo-pinakes', 'syromenes-fysounes', 'gyalina-kagkela', 'energeiaka-tzamia'];
+
+    const contactEmail = 'info@dodekanisaglass.gr';
+    const phoneNumber = '+30 22410 00000'; // Default, update if known
+
+    // Default social links
+    const socialLinks = [
+        { platform: 'facebook', url: 'https://facebook.com' },
+        { platform: 'instagram', url: 'https://instagram.com' }
+    ];
 
     return (
         <footer className="bg-gradient-to-t from-soft-skin to-white pt-32 pb-12 overflow-hidden border-t border-black/5 relative text-black">
@@ -59,9 +64,18 @@ const Footer = () => {
 
                         <FooterColumn title={t.contact}>
                             <FooterLink href="/contact">{t.links.get_quote}</FooterLink>
-                            <FooterLink href="mailto:info@dodekanisaglass.gr">info@dodekanisaglass.gr</FooterLink>
-                            <span className="text-black/40 text-sm mt-4 block font-mono">+30 22410 00000</span>
+                            <FooterLink href={`mailto:${contactEmail}`}>{contactEmail}</FooterLink>
+                            <span className="text-black/40 text-sm mt-4 block font-mono">{phoneNumber}</span>
                             <span className="text-black/40 text-sm block font-sans">{t.address}</span>
+
+                            {/* Social Links */}
+                            <div className="flex gap-4 mt-4">
+                                {socialLinks.map((link, i) => (
+                                    <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-black/40 hover:text-black transition-colors">
+                                        <span className="text-xs font-bold uppercase">{link.platform}</span>
+                                    </a>
+                                ))}
+                            </div>
                         </FooterColumn>
                     </div>
                 </div>

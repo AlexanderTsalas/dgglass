@@ -349,21 +349,21 @@ export const translations = {
             years_badge: '100% Высшее Качество'
         },
         footer: {
-            tagline: 'Αρχιτεκτονικά συστήματα γυαλιού για τους οραματιστές του αύριο.',
-            description: 'Σχεδιασμός και εγκατάσταση σε όλα τα Δωδεκάνησα.',
-            explore: 'Εξερεύνηση',
-            services: 'Υπηρεσίες',
-            contact: 'Επικοινωνία',
-            privacy: 'Privacy',
-            terms: 'Terms',
+            tagline: 'Архитектурные стеклянные системы для визионеров будущего.',
+            description: 'Проектирование и монтаж по всему Додеканесу.',
+            explore: 'Меню',
+            services: 'Услуги',
+            contact: 'Контакты',
+            privacy: 'Конфиденциальность',
+            terms: 'Условия',
             rights: 'DG Systems',
             designed_by: 'Designed & Maintained by Distarter',
-            address: 'Ρόδος, Ελλάδα',
+            address: 'Родос, Греция',
             links: {
-                portfolio: 'Επιλεγμένα Έργα',
-                services: 'Υπηρεσίες',
-                about: 'Η Φιλοσοφία μας',
-                get_quote: 'Ζητήστε Προσφορά'
+                portfolio: 'Избранные Работы',
+                services: 'Услуги',
+                about: 'Наша Философия',
+                get_quote: 'Запросить Расчет'
             }
         },
         services: {

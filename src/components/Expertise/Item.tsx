@@ -9,16 +9,17 @@ interface ExpertiseItemProps {
   delay: number;
   slug: string;
   image?: string;
+  className?: string;
 }
 
-const ExpertiseItem = ({ iconSlug, title, description, delay, slug, image }: ExpertiseItemProps) => {
+const ExpertiseItem = ({ iconSlug, title, description, delay, slug, image, className }: ExpertiseItemProps) => {
   const PATHS = getServicePaths();
   const path = PATHS[iconSlug as keyof typeof PATHS];
 
   return (
     <Link
       href={`/service/${slug}`}
-      className="group relative h-[380px] md:h-[450px] overflow-hidden rounded-[24px] md:rounded-[40px] block bg-white border border-transparent hover:border-soft-pink hover:shadow-2xl transition-all duration-500"
+      className={`group relative overflow-hidden rounded-[24px] md:rounded-[40px] block bg-white border border-transparent hover:border-soft-pink hover:shadow-2xl transition-all duration-500 ${className || 'h-[380px] md:h-[450px]'}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Background Image - Always Visible, Full Color */}
@@ -31,6 +32,9 @@ const ExpertiseItem = ({ iconSlug, title, description, delay, slug, image }: Exp
           />
         </div>
       )}
+
+      {/* Overlay gradient for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-70" />
 
       {/* Content Container */}
       <div className="relative z-30 h-full flex flex-col justify-between p-8 md:p-10">
@@ -59,10 +63,10 @@ const ExpertiseItem = ({ iconSlug, title, description, delay, slug, image }: Exp
 
         {/* Bottom: Text */}
         <div>
-          <h3 className="text-2xl md:text-3xl font-heading font-medium text-black mb-4 leading-none tracking-tight">
+          <h3 className="text-2xl md:text-3xl font-heading font-medium text-white mb-4 leading-none tracking-tight drop-shadow-lg">
             {title}
           </h3>
-          <p className="text-sm text-white font-medium leading-relaxed line-clamp-2 font-sans drop-shadow-md">
+          <p className="text-sm text-gray-200 font-medium leading-relaxed line-clamp-2 font-sans drop-shadow-md">
             {description}
           </p>
         </div>

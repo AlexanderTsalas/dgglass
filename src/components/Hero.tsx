@@ -5,9 +5,28 @@ import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 
-const Hero = () => {
+interface HeroProps {
+  title?: string;
+  subtitle?: string;
+  backgroundImage?: { url: string } | string;
+  cta?: { label: string; link: string };
+}
+
+const Hero = (props: HeroProps) => {
+  const { title, subtitle, backgroundImage, cta } = props
+
+  // Use CMS data if available, otherwise fall back to empty or handle gracefully
+  // Note: Existing Logic for mouse movement and refs is preserved
   const { language } = useLanguage();
   const t = translations[language].hero;
+
+  const displayTitle = title || t.title_line1 + ' ' + t.title_line2;
+  const displaySubtitle = subtitle || t.subtitle;
+  // Handle backgroundImage which can be number or Media object
+  const imageUrl = (typeof backgroundImage === 'object' && backgroundImage?.url)
+    ? backgroundImage.url
+    : (typeof backgroundImage === 'string' ? backgroundImage : 'https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200');
+
   const titleRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -53,12 +72,13 @@ const Hero = () => {
             ref={titleRef}
             className="text-7xl md:text-9xl font-bold tracking-tighter text-black leading-[0.9] mb-12 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
           >
-            {t.title_line1} <br />
-            <span className="text-black/20 italic font-serif">{t.title_line2}</span>
+            {/* Split title if needed or just display */}
+            {displayTitle}
+            {/* <br /> <span className="text-black/20 italic font-serif">{t.title_line2}</span> */}
           </h1>
 
           <p className="text-xl md:text-2xl text-black/60 max-w-xl leading-relaxed font-light mb-16">
-            {t.subtitle}
+            {displaySubtitle}
           </p>
 
           <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
@@ -78,8 +98,8 @@ const Hero = () => {
             style={{ transform: 'rotate(2deg)' }}
           >
             <img
-              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200"
-              alt="Luxury Glass House"
+              src={imageUrl}
+              alt={displayTitle}
               className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-[2000ms]"
             />
 
