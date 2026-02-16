@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft Glass Palette - B&W Focus */
+    --color-bg: 249 250 251;
+    /* #F9FAFB - Soft White Background */
+    --color-text: 17 24 39;
+    /* #111827 - Soft Black Text */
+    --color-glass-border: 0 0 0;
+    /* Pure Black for thin borders */
+    --color-glass-surface: 255 255 255;
+
+    /* Typography */
+    --font-heading: 'Helvetica Now Display', 'Inter', sans-serif;
+    /* Clean Aesthetic */
+    --font-body: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply bg-[#F9FAFB] text-[#111827] font-sans antialiased selection:bg-black selection:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight text-black;
+  }
+}
+
+@layer components {
+
+  /* Soft Glass Panel */
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-xl border border-black/[0.03];
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.02),
+      0 2px 4px -1px rgba(0, 0, 0, 0.02),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    /* Inner highlight */
+  }
+
+  /* Warm Glass Panel */
+  .glass-warm {
+    @apply bg-[#F5F0EB]/60 backdrop-blur-xl border border-white/20;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.02),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Interactive Glass Card */
+  .glass-card {
+    @apply glass-panel transition-all duration-700 hover:bg-white/60 hover:border-black/[0.08];
+  }
+
+  .glass-card:hover {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.05),
+      0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    transform: translateY(-2px);
+  }
+
+  /* Minimalist Button */
+  .btn-minimal {
+    @apply relative inline-flex items-center justify-center overflow-hidden rounded-full border border-black/10 bg-white/50 backdrop-blur-md px-8 py-3 text-xs font-bold uppercase tracking-widest text-black transition-all duration-300 hover:bg-black hover:text-white hover:border-black;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

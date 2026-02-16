@@ -1,34 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        'dode-navy': '#2C3E50',
-        'dode-accent': '#00AACC',
-        'concrete': '#888888',
-        'pure-white': '#FFFFFF',
-        'glass-blue': '#00D1FF',
+        'soft-white': '#F9FAFB',
+        'soft-black': '#111827',
+        'soft-skin': '#FFF0F5', // Light Pink (Lavender Blush)
+        'soft-pink': '#FFF5F7', // Secondary Pink
+        'warm-grey': '#E8E4E1', // New secondary warm tone
+        'glass-border': 'rgba(0, 0, 0, 0.05)',
+        'glass-surface': 'rgba(255, 255, 255, 0.4)',
       },
       fontFamily: {
-        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        heading: ['"Inter"', 'sans-serif'], // Fallback to Inter for now, user can add custom fonts
+        sans: ['"Inter"', 'sans-serif'],
       },
       transitionTimingFunction: {
-        'sharp': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+        'soft': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
-      animation: {
-        'spin-slow': 'spin 8s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        }
-      }
     },
   },
   plugins: [],
