@@ -15,8 +15,8 @@ export default {
         'glass-surface': 'rgba(255, 255, 255, 0.4)',
       },
       fontFamily: {
-        heading: ['"Inter"', 'sans-serif'], // Fallback to Inter for now, user can add custom fonts
-        sans: ['"Inter"', 'sans-serif'],
+        heading: ['"Inter"', '"Tajawal"', 'sans-serif'],
+        sans: ['"Inter"', '"Tajawal"', 'sans-serif'],
       },
       transitionTimingFunction: {
         'expo': 'cubic-bezier(0.19, 1, 0.22, 1)',

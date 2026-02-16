@@ -194,7 +194,13 @@ export const translations = {
             contact: 'Contact',
             privacy: 'Privacy',
             terms: 'Terms',
-            rights: 'DG Systems'
+            rights: 'DG Systems',
+            links: {
+                portfolio: 'Selected Works',
+                services: 'Services',
+                about: 'Our Philosophy',
+                get_quote: 'Request a Quote'
+            }
         },
         services: {
             label: 'Our Expertise',

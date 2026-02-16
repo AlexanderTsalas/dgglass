@@ -17,6 +17,13 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
         const savedLang = localStorage.getItem('dgglass_lang');
         if (savedLang) {
             setLanguage(savedLang);
+            if (savedLang === 'ar') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'ar';
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = savedLang;
+            }
         }
     }, []);
 

@@ -288,6 +288,116 @@ const servicesData: Record<string, Service[]> = {
       delay: 50,
       category: 'Structural',
       features: ['متانة عالية', 'قص حسب المقاس', 'حماية UV', 'عزل صوتي']
+    },
+    {
+      iconSlug: 'maximize',
+      title: 'أنظمة منزلقة وقابلة للطي',
+      slug: 'syromenes-fysounes',
+      description: 'أنظمة أبواب منزلقة وقابلة للطي بتصاميم بسيطة لأقصى قدر من الوضوح والرحابة.',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
+      delay: 100,
+      category: 'Systems',
+      features: ['إطارات نحيفة', 'انزلاق سلس', 'عزل حراري', 'رؤية سلسة', 'أقصى فتحة']
+    },
+    {
+      iconSlug: 'shield',
+      title: 'درابزين زجاجي',
+      slug: 'gyalina-kagkela',
+      description: 'درابزين كريستالي يوفر الأمان دون حجب الرؤية. مثالي للشرفات والسلالم.',
+      image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=1000',
+      delay: 150,
+      category: 'Structural',
+      features: ['بدون إطار', 'أمان ثلاثي الطبقات', 'مقاوم للتآكل', 'تثبيت مخصص']
+    },
+    {
+      iconSlug: 'zap',
+      title: 'زجاج موفر للطاقة',
+      slug: 'energeiaka-tzamia',
+      description: 'تقنية Low-E حديثة لأقصى توفير للطاقة وراحة حرارية شتاءً وصيفاً.',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
+      delay: 200,
+      category: 'Energy',
+      features: ['طلاء Low-E', 'خفض التكاليف', 'راحة حرارية', 'الحد من الأشعة فوق البنفسجية']
+    },
+    {
+      iconSlug: 'layout',
+      title: 'قواطع زجاجية',
+      slug: 'gyalina-xwrismata',
+      description: 'قواطع داخلية للمكاتب والمنازل. حافظ على السطوع مع عزل صوتي كامل.',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000',
+      delay: 250,
+      category: 'Interior',
+      features: ['عزل صوتي', 'تصميم بسيط', 'ألوان متعددة', 'سهولة التركيب']
+    },
+    {
+      iconSlug: 'doorOpen',
+      title: 'أبواب زجاجية',
+      slug: 'gyalines-portes',
+      description: 'أبواب تفتح وتنزلق بآليات حديثة وجماليات بسيطة.',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
+      delay: 300,
+      category: 'Interior',
+      features: ['تشغيل صامت', 'أمان', 'تصاميم مخصصة', 'مفصلات متينة']
+    },
+    {
+      iconSlug: 'shower',
+      title: 'كبائن استحمام',
+      slug: 'kampines-ntouz',
+      description: 'تجهيزات مخصصة لحمامك من زجاج الأمان ومواد عالية المتانة.',
+      image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80&w=1000',
+      delay: 350,
+      category: 'Interior',
+      features: ['زجاج أمان Securit', 'سهلة التنظيف', 'أجزاء مقاومة للصدأ', 'مقاومة للماء']
+    },
+    {
+      iconSlug: 'store',
+      title: 'واجهات المحلات',
+      slug: 'vitrines',
+      description: 'واجهات محلات احترافية لأقصى رؤية وأمان.',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1000',
+      delay: 400,
+      category: 'Commercial',
+      features: ['وضوح عالي', 'مقاومة للتخريب', 'أبعاد كبيرة', 'مرشحات UV']
+    },
+    {
+      iconSlug: 'sun',
+      title: 'إنشاءات خاصة',
+      slug: 'eidikes-kataskeves',
+      description: 'مظلات، سلالم، أرضيات، وأي إنشاءات زجاجية أخرى يتطلبها مساحتك.',
+      image: 'https://images.unsplash.com/photo-1516054575922-f0b8eeadec1a?auto=format&fit=crop&q=80&w=1000',
+      delay: 450,
+      category: 'Special',
+      features: ['دراسة تطبيقية', 'كفاءة هيكلية', 'تصميم فريد', 'مواد معتمدة']
+    },
+    {
+      iconSlug: 'lock',
+      title: 'زجاج أمني',
+      slug: 'security-glass',
+      description: 'زجاج مضاد للرصاص والتخريب للبنوك ومتاجر المجوهرات والمنازل عالية الأمان.',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000',
+      delay: 500,
+      category: 'Safety',
+      features: ['شهادة ضد الرصاص', 'متعدد الطبقات', 'بدون تشويه', 'مقاومة الصدمات']
+    },
+    {
+      iconSlug: 'copy',
+      title: 'مرايا',
+      slug: 'kathreptes',
+      description: 'مرايا عالية الجودة لكل استخدام، مع إضاءة LED اختيارية وأشكال مخصصة.',
+      image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=1000',
+      delay: 550,
+      category: 'Interior',
+      features: ['وضوح', 'مقاومة للرطوبة', 'إضاءة خلفية LED', 'قص CNC']
+    },
+    {
+      iconSlug: 'eye',
+      title: 'زجاج ذكي (PDLC)',
+      slug: 'smart-glass',
+      description: 'زجاج يتحول من شفاف إلى معتم بضغطة زر. خصوصية عند الطلب.',
+      image: 'https://images.unsplash.com/photo-1497215842964-2227430d3d1f?auto=format&fit=crop&q=80&w=1000',
+      delay: 600,
+      category: 'Systems',
+      features: ['خصوصية فورية', 'موفر للطاقة', 'قابل للعرض عليه', 'عزل صوتي']
     }
   ]
 };
