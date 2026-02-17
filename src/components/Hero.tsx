@@ -54,7 +54,7 @@ const Hero = (props: HeroProps) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-gradient-to-b from-soft-white via-[#F7F5F3] to-soft-skin">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden bg-gradient-to-b from-soft-white via-[#F7F5F3] to-soft-skin">
 
       {/* Background Shapes: Warm & Soft */}
       <div className="absolute inset-0 pointer-events-none">

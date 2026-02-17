@@ -134,13 +134,13 @@ const Navigation = () => {
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl transition-all duration-1000 ease-expo ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto clip-path-full' : 'opacity-0 pointer-events-none'
         }`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+        <div className="flex flex-col items-center justify-center h-full w-full gap-8 overflow-y-auto py-10">
           {navLinks.map((link, idx) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-4xl font-heading font-bold text-black hover:text-black/50 transition-all duration-500 opacity-0 animate-slide-up"
+              className="text-4xl md:text-5xl font-heading font-bold text-black hover:text-black/50 transition-all duration-500 opacity-0 animate-slide-up"
               style={{ animationDelay: `${100 + idx * 50}ms`, animationFillMode: 'forwards' }}
             >
               {link.name}
@@ -148,12 +148,12 @@ const Navigation = () => {
           ))}
 
           {/* Mobile Language Picker */}
-          <div className="flex gap-4 mt-8">
+          <div className="flex gap-6 mt-8">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => switchLanguage(lang.code)}
-                className={`text-sm font-bold tracking-widest uppercase ${language === lang.code ? 'text-black underline' : 'text-black/40'
+                className={`text-base font-bold tracking-widest uppercase ${language === lang.code ? 'text-black underline' : 'text-black/40'
                   }`}
               >
                 {lang.label}

@@ -19,11 +19,11 @@ const ExpertiseCatalog = () => {
     <section
       id="services"
       ref={sectionRef}
-      className="section-padding relative bg-soft-white overflow-hidden py-32"
+      className="section-padding relative bg-soft-white overflow-hidden py-16 md:py-32"
     >
       <div className="max-w-[1920px] mx-auto relative z-10 px-6 md:px-12">
         {/* Header Section - Editorial Style */}
-        <div className="flex flex-col lg:flex-row items-end justify-between mb-24 gap-12 border-b border-black/5 pb-12">
+        <div className="flex flex-col lg:flex-row items-end justify-between mb-12 md:mb-24 gap-8 md:gap-12 border-b border-black/5 pb-8 md:pb-12">
           <div className="max-w-4xl">
             <span className="text-black/40 text-xs font-bold uppercase tracking-[0.4em] mb-6 block">
               {t.label}

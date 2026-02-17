@@ -1,6 +1,7 @@
 import '../globals.css';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import FloatingCallButton from '../../components/FloatingCallButton';
 import { LanguageProvider } from '../../context/LanguageContext';
 
 
@@ -25,6 +26,7 @@ export default async function RootLayout({
                 <LanguageProvider>
                     <Navigation />
                     <main>{children}</main>
+                    <FloatingCallButton />
                     <Footer />
                 </LanguageProvider>
             </body>
