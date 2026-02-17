@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
@@ -82,9 +83,9 @@ const Hero = (props: HeroProps) => {
           </p>
 
           <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
-            <button className="btn-minimal group bg-black text-white border-transparent hover:bg-white hover:text-black hover:border-black shadow-lg hover:shadow-xl transition-all duration-500">
+            <Link href="/portfolio" className="btn-minimal group bg-black text-white border-transparent hover:bg-white hover:text-black hover:border-black shadow-lg hover:shadow-xl transition-all duration-500">
               <span className="relative z-10">{t.cta_portfolio}</span>
-            </button>
+            </Link>
             <div className="h-[1px] w-20 bg-black/10 hidden md:block" />
             <span className="text-xs font-bold uppercase tracking-widest text-black/40">Since 1993</span>
           </div>
