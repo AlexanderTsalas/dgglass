@@ -70,14 +70,14 @@ const Hero = (props: HeroProps) => {
           </span>
           <h1
             ref={titleRef}
-            className="text-7xl md:text-9xl font-bold tracking-tighter text-black leading-[0.9] mb-12 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+            className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-black leading-[0.9] mb-8 md:mb-12 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
           >
             {/* Split title if needed or just display */}
             {displayTitle}
             {/* <br /> <span className="text-black/20 italic font-serif">{t.title_line2}</span> */}
           </h1>
 
-          <p className="text-xl md:text-2xl text-black/60 max-w-xl leading-relaxed font-light mb-16">
+          <p className="text-lg md:text-2xl text-black/60 max-w-xl leading-relaxed font-light mb-10 md:mb-16">
             {displaySubtitle}
           </p>
 
@@ -91,10 +91,10 @@ const Hero = (props: HeroProps) => {
         </div>
 
         {/* Hero Image - Floating Card */}
-        <div className="relative h-[600px] w-full hidden lg:block order-1 lg:order-2 perspective-1000">
+        <div className="relative h-[40vh] lg:h-[600px] w-full block order-1 lg:order-2 perspective-1000">
           <div
             ref={imageRef}
-            className="absolute inset-0 w-full h-full glass-panel rounded-[40px] overflow-hidden shadow-2xl transition-transform duration-100 ease-out"
+            className="absolute inset-0 w-full h-full glass-panel rounded-[32px] lg:rounded-[40px] overflow-hidden shadow-2xl transition-transform duration-100 ease-out"
             style={{ transform: 'rotate(2deg)' }}
           >
             <img
@@ -106,8 +106,8 @@ const Hero = (props: HeroProps) => {
           </div>
 
           {/* Floating Badge */}
-          <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-105">
-            <span className="text-4xl font-bold block">100%</span>
+          <div className="absolute -bottom-6 -left-6 lg:-bottom-10 lg:-left-10 bg-white p-6 lg:p-8 rounded-3xl shadow-xl transition-transform duration-300 hover:scale-105 hidden md:block">
+            <span className="text-3xl lg:text-4xl font-bold block">100%</span>
             <span className="text-[10px] uppercase tracking-widest text-black/40 font-bold">{t.badge_quality}</span>
           </div>
         </div>

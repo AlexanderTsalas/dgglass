@@ -28,7 +28,7 @@ const ExpertiseCatalog = () => {
             <span className="text-black/40 text-xs font-bold uppercase tracking-[0.4em] mb-6 block">
               {t.label}
             </span>
-            <h2 className="text-black text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.8]">
+            <h2 className="text-black text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] md:leading-[0.8]">
               {t.title} <br />
               <span className="text-black/30 italic font-serif">{t.subtitle}</span>
             </h2>
